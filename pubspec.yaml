@@ -13,6 +13,8 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.4
+  arrow_path: ^2.0.0
+  get: ^4.6.5
 
 dev_dependencies:
   flutter_test:
