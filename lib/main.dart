@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_tutorial/src/arrow.dart';
+
+import 'src/arrow.dart';
 
 void main() => runApp(const MyApp());
 
@@ -37,11 +38,37 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey,
       appBar: AppBar(title: const Text('Arrow Path Example')),
-      body: Container(
-        constraints: const BoxConstraints.expand(),
-        child: CustomPaint(
-          painter: ArrowPainter(),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: ListView.separated(
+            itemCount: 6,
+            separatorBuilder: (BuildContext context, int index) =>
+                const SizedBox(height: 2),
+            itemBuilder: (BuildContext context, int index) {
+              return Container(
+                padding: const EdgeInsets.only(top: 20),
+                color: Colors.white,
+                width: double.maxFinite,
+                height: 110,
+                child: CustomPaint(
+                  foregroundPainter: ArrowPainter2(),
+                  child: const Align(
+                    alignment: Alignment.topCenter,
+                    child: Text(
+                      '오늘의 일정',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
