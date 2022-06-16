@@ -2,17 +2,25 @@ import 'package:arrow_path/arrow_path.dart';
 import 'package:flutter/material.dart';
 
 class ArrowPainter2 extends CustomPainter {
+  final Color? color;
+
+  ArrowPainter2({
+    this.color = Colors.blueAccent,
+  });
+
   @override
   void paint(Canvas canvas, Size size) {
     // The arrows usually looks better with rounded caps.
     Paint paint = Paint()
-      ..color = Colors.black
+      ..color = color!
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round
       ..strokeJoin = StrokeJoin.round
-      ..strokeWidth = 3.0;
+      ..strokeWidth = 2.4;
 
-    canvas.drawPath(arrowPathPaint(size.width, size.height), paint);
+    Path arrowPaint = arrowPathPaint(size.width, size.height);
+
+    canvas.drawPath(arrowPaint, paint);
   }
 
   Path arrowPathPaint(double x, double y) {

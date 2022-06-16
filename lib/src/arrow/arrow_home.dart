@@ -23,7 +23,7 @@ class _ArrowHomeState extends State<ArrowHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.grey,
       appBar: AppBar(title: const Text('Arrow Path Example')),
       body: Center(
         child: Padding(
@@ -36,10 +36,10 @@ class _ArrowHomeState extends State<ArrowHome> {
               return Container(
                 padding: const EdgeInsets.only(top: 20),
                 color: Colors.white,
-                width: double.maxFinite,
-                height: 110,
+                width: double.infinity,
+                height: 80,
                 child: CustomPaint(
-                  foregroundPainter: ArrowPainter2(),
+                  foregroundPainter: ArrowPainter2(color: Colors.blueAccent),
                   child: const Align(
                     alignment: Alignment.topCenter,
                     child: Text(
@@ -47,6 +47,7 @@ class _ArrowHomeState extends State<ArrowHome> {
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
+                        color: Colors.lightBlue,
                       ),
                     ),
                   ),
