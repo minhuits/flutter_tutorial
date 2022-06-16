@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'src/arrow/arrow_home.dart';
+import 'src/list_tile/switch_demo.dart';
 
 void main() => runApp(const MyApp());
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Arrow Path Example',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const ArrowHome(),
+      home: const ListTileSwitchDemo(),
     );
   }
 }
