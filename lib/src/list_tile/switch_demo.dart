@@ -20,15 +20,15 @@ class _ListTileSwitchDemoState extends State<ListTileSwitchDemo> {
     return Scaffold(
       appBar: AppBar(title: const Text('ListTileSwitch Demo')),
       body: SingleChildScrollView(
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const SizedBox(height: 20),
             Text('ListTileSwitch with only title', style: textStyle),
             const SizedBox(height: 20),
             ListTileSwitch(
               value: _switchValues[0],
-              leading: const Icon(Icons.access_alarms),
+              leading: const Icon(Icons.access_alarm),
               onChanged: (value) {
                 setState(() {
                   _switchValues[0] = value;
@@ -130,7 +130,6 @@ class _ListTileSwitchDemoState extends State<ListTileSwitchDemo> {
               switchActiveColor: Colors.deepOrange,
               switchType: SwitchType.material,
             ),
-            const SizedBox(height: 20),
           ],
         ),
       ),
