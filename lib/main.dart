@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/src/switch/custom_switch.dart';
+import 'package:provider/provider.dart';
+
+import 'src/index_stack/index_stack_page.dart';
+import 'src/index_stack/provider/form_provider.dart';
 
 void main() => runApp(const MyApp());
 
@@ -8,11 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return MaterialApp(
-    //   title: 'Arrow Path Example',
-    //   theme: ThemeData(primarySwatch: Colors.blue),
-    //   home: const ListTileSwitchDemo(),
-    // );
-    return const CustomSwitchDemo();
+    return ChangeNotifierProvider(
+      create: (BuildContext context) => FormProvider(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(primarySwatch: Colors.green),
+        home: const IndexStackPage(),
+      ),
+    );
   }
 }
